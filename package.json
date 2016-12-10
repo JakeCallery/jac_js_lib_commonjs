@@ -1,0 +1,6 @@
+{
+	"name":"JAC_LIB",
+	"dependencies": {
+		"requirejs" :"*"
+	}
+}

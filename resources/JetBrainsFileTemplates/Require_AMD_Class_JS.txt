@@ -1,0 +1,37 @@
+/**
+ * Created with ${PRODUCT_NAME}.
+ * User: ${USER}
+ */
+
+#if (${BASE_OBJ_PATH} == '')
+define([],
+function(){
+    return (function(){
+#else
+define(['${BASE_OBJ_PATH}/${BASE_OBJ}','jac/utils/ObjUtils'],
+function(${BASE_OBJ},ObjUtils){
+    return (function(){
+#end
+        /**
+         * Creates a ${NAME} object
+ #if (${BASE_OBJ} != '')
+        * @extends {${BASE_OBJ}}
+ #end
+        * @constructor
+         */
+        function ${NAME}(){
+#if(${BASE_OBJ} != '')
+            //super
+            ${BASE_OBJ}.call(this);
+#end
+        }
+
+#if(${BASE_OBJ} != '')
+        //Inherit / Extend
+        ObjUtils.inheritPrototype(${NAME},${BASE_OBJ});
+#end
+
+        //Return constructor
+        return ${NAME};
+    })();
+});

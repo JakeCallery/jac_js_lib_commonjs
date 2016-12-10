@@ -1,0 +1,26 @@
+/**
+ * Created with ${PRODUCT_NAME}.
+ * User: ${USER}
+ */
+
+define([],
+function(){
+    return (function(){
+        /**
+         * Creates a ${NAME} Singleton object
+         * to use ALWAYS new it up mySingleton = new ${NAME}()
+         * @constructor
+         */
+        function ${NAME}(){
+	        if(${NAME}.prototype._singletonInstance){
+		        return ${NAME}.prototype._singletonInstance;
+	        }
+
+	        //Make first instance
+	        ${NAME}.prototype._singletonInstance = this;
+        }
+
+        //Return constructor
+        return ${NAME};
+    })();
+});
